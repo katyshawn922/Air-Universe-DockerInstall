@@ -1,0 +1,93 @@
+{
+  "log": {
+    "access": "/var/log/xray.log"
+  },
+  "stats": {},
+  "api": {
+    "services": [
+      "HandlerService",
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      }
+    }
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10084,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "ipv6out",
+      "protocol": "freedom",
+      "settings": {"domainStrategy": "UseIPv6" 
+      }
+    },
+    {
+      "tag": "blackhole",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "domainMatcher": "mph",
+    "rules": [
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+     {
+        "type": "field",
+        "domain": [
+          "geosite:google",
+          "geosite:netflix"
+        ],
+        "outboundTag": "ipv6out"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blackhole"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "127.0.0.1/32",
+          "10.0.0.0/8",
+          "fc00::/7",
+          "fe80::/10",
+          "172.16.0.0/12"
+        ],
+        "outboundTag": "blackhole"
+      }
+    ]
+  }
+}
