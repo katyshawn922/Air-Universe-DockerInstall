@@ -52,8 +52,6 @@
     }
   ],
   "routing": {
-    "domainStrategy": "AsIs",
-    "domainMatcher": "mph",
     "rules": [
       {
         "inboundTag": [
