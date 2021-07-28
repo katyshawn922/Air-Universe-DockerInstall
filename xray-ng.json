@@ -42,7 +42,7 @@
     {
       "tag": "ipv6out",
       "protocol": "freedom",
-      "settings": {"domainStrategy": "UseIPv6" 
+      "settings": {"domainStrategy": "UseIPv6"
       }
     },
     {
