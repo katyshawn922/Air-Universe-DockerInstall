@@ -40,7 +40,7 @@
       "settings": {}
     },
     {
-      "tag": "ipv6out",
+      "tag": "ipv6_out",
       "protocol": "freedom",
       "settings": {"domainStrategy": "UseIPv6"
       }
@@ -52,6 +52,8 @@
     }
   ],
   "routing": {
+    "domainStrategy": "AsIs",
+    "domainMatcher": "mph",    
     "rules": [
       {
         "inboundTag": [
@@ -66,7 +68,7 @@
           "geosite:google",
           "geosite:netflix"
         ],
-        "outboundTag": "ipv6out"
+        "outboundTag": "ipv6_out"
       },
       {
         "type": "field",
