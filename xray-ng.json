@@ -52,7 +52,7 @@
     }
   ],
   "routing": {
-    "domainMatcher": "mph",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "inboundTag": [
@@ -65,18 +65,7 @@
         "type": "field",
         "domain": [
           "geosite:google",
-          "geosite:netflix",
-          "geosite:youtube",
-          "youtube",
-          "youtube.com",
-          "youtu.be",
-          "googleapis.com",
-          "googlevideos.com",
-          "googleusercontent.com",
-          "ytimg.com",
-          "ggpht.com",
-          "yt.be",
-          "gvt2.com"
+          "geosite:netflix"
         ],
         "outboundTag": "ipv6_out"
       },
