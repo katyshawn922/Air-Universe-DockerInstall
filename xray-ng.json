@@ -73,8 +73,10 @@
           "youtu.be",
           "googleapis.com",
           "googlevideos.com",
+          "googleusercontent.com",
           "ytimg.com",
           "ggpht.com",
+          "yt.be",
           "gvt2.com"          
         ],
         "outboundTag": "ipv6_out"
