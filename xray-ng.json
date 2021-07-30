@@ -52,8 +52,7 @@
     }
   ],
   "routing": {
-    "domainStrategy": "AsIs",
-    "domainMatcher": "mph",    
+    "domainMatcher": "mph",
     "rules": [
       {
         "inboundTag": [
@@ -77,7 +76,7 @@
           "ytimg.com",
           "ggpht.com",
           "yt.be",
-          "gvt2.com"          
+          "gvt2.com"
         ],
         "outboundTag": "ipv6_out"
       },
