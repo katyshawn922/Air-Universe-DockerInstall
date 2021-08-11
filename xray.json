@@ -52,6 +52,13 @@
       },
       {
         "type": "field",
+        "domain": [
+          "geosite:cn"
+        ],
+        "outboundTag": "blackhole"
+      },
+      {
+        "type": "field",
         "protocol": [
           "bittorrent"
         ],
