@@ -61,11 +61,12 @@
       },
       {
         "type": "field",
-        "protocol": [
-          "bittorrent"
+        "ip": [
+          "geoip:cn",
+          "geoip:private"
         ],
         "outboundTag": "blackhole"
-      },      
+      },    
       {
         "type": "field",
         "protocol": [
