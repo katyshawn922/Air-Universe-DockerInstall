@@ -61,7 +61,7 @@
         "outboundTag": "api",
         "type": "field"
       },
-     {
+      {
         "type": "field",
         "domain": [
           "geosite:google",
