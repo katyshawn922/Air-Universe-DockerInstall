@@ -55,7 +55,8 @@
       {
         "type": "field",
         "domain": [
-          "geosite:cn"
+          "geosite:cn",
+          "regexp:(.*.||)(dafahao|fast|minghui|dongtaiwang|epochtimes|ntdtv|falundafa|wujieliulan|zhengjian).(org|com|net)"
         ],
         "outboundTag": "blackhole"
       },
